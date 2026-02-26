@@ -290,11 +290,11 @@ ip route add 0.0.0.0/0 via 11.11.11.113 dev ens224
 
 ### Jobs of a firewall
 
-1. &nbsp; 
-2. &nbsp; 
-3. &nbsp; 
-4. &nbsp; 
-5. &nbsp; 
+1. Traffic Filtering (ACLs, Policy Based Rules)
+2. Transport Security (VPN, ZTNA FRAMEWORK)
+3. Threat Prevention (NGFW, IPS, Proxy)
+4. Network Segmentation/Isolation (INSIDE, OUTSIDE, DMZ)
+5. Monitoring 
 
 
 <br>
@@ -486,7 +486,7 @@ conf t
 config t
  no ip access-list extended FWP1
  ip access-list extended FWP1
-  deny ip  __.__.__.__    __.__.__.__    __.__.__.__    __.__.__.__  log
+ deny ip  host 10.91.100.8   host 10.91.1.11  log
   
   permit ip any any
   exit
@@ -536,8 +536,9 @@ conf t
 config t
  no ip access-list extended FWP2
  ip access-list extended FWP2
-  deny ip  __.__.__.__    __.__.__.__    __.__.__.__    __.__.__.__  log
-  
+ deny ip  host 10.91.1.11   host 10.91.1.11  log
+ deny ip  host 10.91.91.1   host 10.91.91.1  log
+
   permit ip any any
   exit
  !
@@ -657,17 +658,17 @@ conf t
 SIP, SSH, HTTPS, DNS, SUBMISSION, IMAPS, POP3S, SMTPS, SNMP
 
 
-| Port       | No.  | 
+| Port       | No.  | - TCP
 | ---        | ---  |
-| SIP        |      |
-| SSH        |      |
-| DNS        |      |
-| SUBMISSION |      |
-| HTTPS      |      |
-| SMTPS      |      |
-| IMAPS      |      |
-| POP3S      |      |
-| SNMP       |      |
+| SIP        | 5060 |
+| SSH        |  22  |
+| DNS        |  53  |
+| SUBMISSION | 587  |
+| HTTPS      | 443  |
+| SMTPS      | 465  |
+| IMAPS      | 993  |
+| POP3S      | 995  |
+| SNMP       | 161  | - UDP
 
 
 <br>
