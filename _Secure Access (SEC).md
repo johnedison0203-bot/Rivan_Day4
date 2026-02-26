@@ -161,6 +161,7 @@ wr
 ~~~
 !@BLDG-PH
 sudo su
+hostname BLDG-PH
 ifconfig eth0 11.11.11.100 netmask 255.255.255.224 up
 route add default gw 11.11.11.113
 ping 11.11.11.113
@@ -180,6 +181,7 @@ adduser admin
 ~~~
 !@BLDG-JP-1
 sudo su
+hostname BLDG-JP-1
 ifconfig eth0 21.21.21.211 netmask 255.255.255.240 up
 route add default gw 21.21.21.213
 ping 21.21.21.213
@@ -190,6 +192,7 @@ ping 21.21.21.213
 ~~~
 !@BLDG-JP-2
 sudo su
+hostname BLDG-JP-2
 ifconfig eth0 22.22.22.221 netmask 255.255.255.192 up
 route add default gw 22.22.22.223
 ping 22.22.22.223
