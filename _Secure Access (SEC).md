@@ -865,6 +865,9 @@ conf t
  ip nat inside source list NAT int g1 overload
  !
  ip nat inside source static tcp  11.11.11.111  80  208.8.8.100  8080
+ !
+ no ip route 10.0.0.0 255.0.0.0 10.#$34T#.1.4
+ no ip route 200.0.0.0 255.255.255.0 10.#$34T#.1.4
  end
 ~~~
 
